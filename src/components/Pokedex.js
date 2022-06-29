@@ -8,7 +8,7 @@ const Pokedex = () => {
     const result = await axios.get(
       "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
     );
-    setPokemonList(result);
+    setPokemonList(result.data.results);
     console.log(result.data.results);
   };
 
@@ -18,12 +18,13 @@ const Pokedex = () => {
 
   return (
     <div>
-      <h1>List of Pokémons</h1>
-      {/* <ul>
+      <h1 className="pokedexTitle">Pokédex</h1>
+      <ul>
         {pokemonList.map((p) => {
           return <li>{p.name}</li>;
+          console.log(p);
         })}
-      </ul> */}
+      </ul>
     </div>
   );
 };
