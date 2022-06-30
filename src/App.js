@@ -1,19 +1,23 @@
 import "./App.css";
 import Homepage from "./pages/Homepage";
-import Pokedex from "./components/Pokedex";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import pokemonPage from "./pages/pokemonPage";
+import PokemonPage from "./pages/PokemonPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navbar, Container } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <Homepage />
-      {/* <BrowserRouter>
+      <Navbar bg="light">
+        <Container>
+          <Navbar.Brand href="/">Pokéman</Navbar.Brand>
+        </Container>
+      </Navbar>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/pokemon/:name" element={<pokemonPage />} />
+          <Route path="/pokemon/:name" element={<PokemonPage />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }

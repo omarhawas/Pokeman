@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -40,11 +40,10 @@ const Pokedex = () => {
       <h1 className="pokedexTitle">Pokédex</h1>
       <ul>
         {pokemonList.map((p) => {
-          console.log(p);
+          //   console.log(p);
           return (
             <li key={p.url}>
-              {p.name}
-              {/* <Link to={p.url}>{p.name}</Link> */}
+              <Link to={`pokemon/${p.name}`}>{p.name}</Link>
             </li>
           );
         })}
