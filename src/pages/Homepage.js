@@ -1,9 +1,10 @@
 import React from "react";
+import Pokedex from "../components/Pokedex";
 
 const Homepage = () => {
   return (
     <div>
-      <h1>Pokéman</h1>
+      <Pokedex />
     </div>
   );
 };

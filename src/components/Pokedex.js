@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// import { Link } from "react-router-dom";
 
 const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -13,7 +14,7 @@ const Pokedex = () => {
     setPokemonList(result.data.results);
     setNextPokemon(result.data.next);
     setPreviousPokemon(result.data.previous);
-    console.log(result);
+    // console.log(result);
   };
 
   useEffect(() => {
@@ -39,8 +40,13 @@ const Pokedex = () => {
       <h1 className="pokedexTitle">Pokédex</h1>
       <ul>
         {pokemonList.map((p) => {
-          return <li key={p.url}>{p.name}</li>;
           console.log(p);
+          return (
+            <li key={p.url}>
+              {p.name}
+              {/* <Link to={p.url}>{p.name}</Link> */}
+            </li>
+          );
         })}
       </ul>
       <button className="previousBtn" onClick={findPreviousPokemon}>
