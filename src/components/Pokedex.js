@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const Pokedex = () => {
+const Pokedex = (props) => {
   const [pokemonList, setPokemonList] = useState([]);
   const [nextPokemon, setNextPokemon] = useState("");
   const [previousPokemon, setPreviousPokemon] = useState("");
@@ -42,9 +42,13 @@ const Pokedex = () => {
         {pokemonList.map((p) => {
           //   console.log(p);
           return (
-            <li key={p.url}>
-              <Link to={`pokemon/${p.name}`}>{p.name}</Link>
-            </li>
+            <div key={p.url}>
+              {props.useLinks ? (
+                <Link to={`pokemon/${p.name}`}>{p.name}</Link>
+              ) : (
+                <p>{p.name}</p>
+              )}
+            </div>
           );
         })}
       </ul>

@@ -4,7 +4,7 @@ import Pokedex from "../components/Pokedex";
 const Homepage = () => {
   return (
     <div>
-      <Pokedex />
+      <Pokedex useLinks={true} />
     </div>
   );
 };

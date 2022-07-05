@@ -46,7 +46,7 @@ const PokemonPage = () => {
         onChange={handleInputChange}
       ></input>
       <button>Compare</button>
-      <Pokedex />
+      <Pokedex useLinks={false} />
     </div>
   );
 };
