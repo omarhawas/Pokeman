@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Card, Button } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 
 const PokemonPage = () => {
   const [pokemon, setPokemon] = useState("");
@@ -22,13 +22,25 @@ const PokemonPage = () => {
 
   return (
     <div>
-      <h1>{pokemon.name.toUpperCase()}</h1>
       {console.log(pokemon)}
-      <img src={pokemon.sprites.front_shiny} />
-      <img src={pokemon.sprites.back_shiny} />
-      <p>Base Experience: {pokemon.base_experience}</p>
-      <p>Height: {pokemon.height}</p>
-      <p>Weight: {pokemon.weight}</p>
+      {/* <Card style={{ width: "18rem" }}>
+        <Card.Header>Featured</Card.Header>
+        <ListGroup variant="flush">
+          <ListGroup.Item>Cras justo odio</ListGroup.Item>
+          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        </ListGroup>
+      </Card> */}
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={pokemon.sprites?.front_shiny} />
+        <Card.Img variant="top" src={pokemon.sprites?.back_shiny} />
+        <Card.Body>
+          <Card.Title>{pokemon.name?.toUpperCase()}</Card.Title>
+          <Card.Text>Base Experience: {pokemon.base_experience}</Card.Text>
+          <Card.Text>Height: {pokemon.height}</Card.Text>
+          <Card.Text>Weight: {pokemon.weight}</Card.Text>
+        </Card.Body>
+      </Card>
     </div>
   );
 };
