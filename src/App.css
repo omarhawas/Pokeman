@@ -50,3 +50,13 @@
 .nextBtn {
   margin-left: 45px;
 }
+
+.pokeImage {
+  width: 170px;
+}
+
+.pokeCard {
+  width: 18rem;
+  border: black solid;
+  border-radius: 2rem;
+}

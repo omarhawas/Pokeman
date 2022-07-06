@@ -1,8 +1,10 @@
-import "./App.css";
 import Homepage from "./pages/Homepage";
 import PokemonPage from "./pages/PokemonPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
 
 function App() {
   return (

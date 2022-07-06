@@ -14,7 +14,6 @@ const Pokedex = (props) => {
     setPokemonList(result.data.results);
     setNextPokemon(result.data.next);
     setPreviousPokemon(result.data.previous);
-    // console.log(result);
   };
 
   useEffect(() => {
@@ -46,7 +45,7 @@ const Pokedex = (props) => {
               {props.useLinks ? (
                 <Link to={`pokemon/${p.name}`}>{p.name}</Link>
               ) : (
-                <p>{p.name}</p>
+                <p onClick={() => props.handleClick(p.name)}>{p.name}</p>
               )}
             </div>
           );
