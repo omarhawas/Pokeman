@@ -32,6 +32,13 @@ const PokemonPage = () => {
     }
   };
 
+  const handleDelete = (name) => {
+    const newList = pokemon.filter((p) => {
+      p !== name;
+    });
+    setPokemon(newList);
+  };
+
   return (
     <>
       <Row xs={1} md={5} className="g-4">
@@ -54,6 +61,13 @@ const PokemonPage = () => {
                 <Card.Text>Height: {p.height}</Card.Text>
                 <Card.Text>Weight: {p.weight}</Card.Text>
               </Card.Body>
+              <button
+                onClick={() => {
+                  handleDelete(p.name);
+                }}
+              >
+                Delete
+              </button>
             </Card>
           </Col>
         ))}
